@@ -21,7 +21,7 @@ This is my solution for this challenge, I hope you like it, and if you have any 
 
 ### Screenshot
 
-- Mibile version
+- Mobile version
 
   ![](./screenShots/mob.png)
 - Desktop version
