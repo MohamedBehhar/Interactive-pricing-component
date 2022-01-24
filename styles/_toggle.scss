@@ -1,0 +1,39 @@
+@import "./variables";
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  .checkbox {
+    display: none;
+    &:checked + .toggle-slider {
+      background: $soft-cyan;
+    }
+    &:checked + .toggle-slider::before {
+      transform: translateX(100%);
+    }
+  }
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $Toggle-Background;
+    transition: 0.4s ease-in-out;
+    border-radius: 25px;
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 3px;
+      left: 5px;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background-color: rgb(255, 255, 255);
+      transition: 0.35s ease-in-out;
+    }
+  }
+}

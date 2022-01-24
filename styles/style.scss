@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+@import "./variables";
+@import "./toggle";
+@import "./slider";
+@import "./breakPoints";
+
+@mixin flexCenter($direction, $justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+body {
+  background: $Main-BG;
+  height: 100vh;
+  @include flexCenter(column, center);
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  background-image: url(../images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+header {
+  position: fixed;
+  top: 1rem;
+  text-align: center;
+  background-image: url(../images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 1rem;
+  h2 {
+    color: $CTA-BG;
+  }
+  p {
+    color: $Text;
+  }
+  @include laptop {
+    top: 2rem;
+  }
+}
+
+.card {
+  background: $White;
+  width: 90%;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.308);
+  padding: 1rem;
+  text-align: center;
+  color: $Text;
+  @include phone {
+    width: 70%;
+  }
+  @include tablet {
+    width: 60%;
+  }
+  @include medium-screen {
+    width: 50%;
+  }
+  @include laptop {
+    width: 35%;    
+  }
+  .grid {
+    display: unset;
+    @include laptop {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-auto-rows: auto;
+      grid-auto-flow: dense;
+    }
+    .page-view {
+      margin-bottom: $margin-bottom;
+      letter-spacing: 3px;
+      line-height: 20px;
+      text-transform: uppercase;
+      @include flexCenter(column, center);
+    }
+    .total {
+      width: 100%;
+      margin-bottom: $margin-bottom;
+      @include flexCenter(row, center);
+      #value {
+        margin-right: 0.5rem;
+        font-size: 30px;
+        font-weight: bold;
+        color: $CTA-BG;
+      }
+    }
+  }
+  .billing-choice {
+    @include flexCenter(row, space-between);
+    color: $Text;
+    margin-bottom: 1.5rem;
+    @include laptop {
+      margin-top: 2rem; 
+    }
+    .discount {
+      background-color: $Discount-Background;
+      color: $Discount-Text;
+      padding: 0 0.2rem;
+      border-radius: 10px;
+    }
+  }
+  .offers {
+    border-top: 1px solid $Empty-Slider-Bar;
+    padding-top: 1rem;
+    @include medium-screen {
+      @include flexCenter(row, space-evenly);
+    }
+    .text li {
+      margin-bottom: $margin-bottom;
+      &::before {
+        content: url(../images/icon-check.svg);
+        margin-right: 0.5rem;
+      }
+    }
+    .ctl-btn {
+      background-color: $CTA-BG;
+      color: $CTA-Text;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 15px;
+      border: none;
+      transition: color ease-in-out 0.3s;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+  a {
+    color: $CTA-BG;
+    text-decoration: none;
+  }
+}
