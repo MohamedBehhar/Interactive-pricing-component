@@ -24,7 +24,10 @@ body {
   font-size: 15px;
   background-image: url(../images/bg-pattern.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: left center-top;
+  @include x-small {
+    font-size: 12px;
+  }
 }
 
 header {
@@ -42,22 +45,28 @@ header {
   p {
     color: $Text;
   }
+  @include phone {
+    top: 3.5rem;
+  }
   @include laptop {
-    top: 2rem;
+    top: 2.5rem;
   }
 }
 
 .card {
   background: $White;
-  width: 90%;
+  width: 80%;
   height: fit-content;
   border-radius: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.308);
   padding: 1rem;
   text-align: center;
   color: $Text;
+  @include x-small {
+    width: 90%;
+  }
   @include phone {
-    width: 70%;
+    width: 80%;
   }
   @include tablet {
     width: 60%;

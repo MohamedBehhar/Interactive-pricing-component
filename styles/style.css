@@ -137,7 +137,13 @@ body {
   font-size: 15px;
   background-image: url(../images/bg-pattern.svg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: left center-top;
+}
+
+@media (min-width: 0px) {
+  body {
+    font-size: 12px;
+  }
 }
 
 header {
@@ -159,15 +165,21 @@ header p {
   color: #858fad;
 }
 
+@media (min-width: 370px) {
+  header {
+    top: 3.5rem;
+  }
+}
+
 @media (min-width: 1200px) {
   header {
-    top: 2rem;
+    top: 2.5rem;
   }
 }
 
 .card {
   background: white;
-  width: 90%;
+  width: 80%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -179,13 +191,19 @@ header p {
   color: #858fad;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 0px) {
   .card {
-    width: 70%;
+    width: 90%;
   }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 370px) {
+  .card {
+    width: 80%;
+  }
+}
+
+@media (min-width: 620px) {
   .card {
     width: 60%;
   }
